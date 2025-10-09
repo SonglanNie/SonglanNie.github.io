@@ -18,29 +18,56 @@ This is the primary focus of my Ph.D. research. I am working on creating **effic
 
 ## Past Projects
 
-### Newton's Method for Nonlinear Elasticity: Modeling Materials Under Stress
+### Newton’s Method Beyond the Local Regime
 
-This project addressed the challenge of numerically solving models for **hyperelasticity** (materials that undergo large, reversible deformations).
+Nonlinear partial differential equations arise frequently in applied mathematics — but unlike linear systems, their solutions can’t be obtained in a single step. The **Newton–Kantorovich method** provides a powerful iterative framework: given an operator equation  
 
-* **Problem:** Accurately and efficiently solving the complex, nonlinear governing equations for highly deformable materials.
-* **Method:** I derived the **Newton linearization** of the St Venant-Kirchhoff (SVK) hyperelasticity model, investigated globalization strategies (like backtracking and critical point line search), and implemented a **high-order Finite Element Method (FEM)** using the Firedrake library in Python.
-* **Impact:** The implementation produced the **optimal rate of convergence**.
+$$
+F(u) = 0,
+$$
 
-### Analytical Lower Bound for Union Probability: Sharpening Statistical Estimates
+it linearizes $F$ around a current approximation $u_k$ and solves a sequence of linear problems  
 
-This was a theoretical project focusing on improving established limits in probability theory.
+$$
+DF(u_k)\,\delta u_k = -F(u_k), \quad u_{k+1} = u_k + \delta u_k.
+$$
 
-* **Problem:** Deriving tighter **lower bounds** for the probability of at least $m$-out-of-$n$ events occurring.
-* **Method:** I used techniques from **Linear Programming (LP)** to analyze and strengthen existing bounds, including a particular relaxation used in the Yang-Alajaji-Takahara (YAT) bound.
-* **Impact:** I derived a **novel analytical lower bound** for the "3-out-of-$n$" events case with three constraints.
+Under favorable conditions, this process converges **quadratically** — errors shrink rapidly once we are close to the solution.
+
+The challenge is that this convergence is **local**. If the initial guess is too far, the method may diverge or oscillate. In practice, this sensitivity limits Newton’s effectiveness on nonlinear PDEs, where good initial guesses are rarely available.
+
+To address this, I explored **globalization strategies** that preserve Newton’s efficiency while improving its robustness:
+
+- **Backtracking line search**, which adaptively scales each update to ensure a decrease in the residual norm.  
+- **Load continuation**, which introduces the nonlinearity gradually by solving a sequence of easier problems leading to the full system.
+
+I implemented and compared these strategies in a **finite element setting** using the **Firedrake** framework. The results show that with proper globalization, Newton’s method becomes a **reliable general-purpose solver** for nonlinear PDEs — maintaining fast convergence without relying on a perfect starting point.
+
+Nie, S., Aznaran, F. R. A., & Parker, C. (2023). *Nonlinear elasticity and Newton’s method in infinite dimensions.* Oxford Mathematical Institute. [pdf]({{ "/files/Newton_s_method_for_nonlinear_PDEs_report.pdf" | relative_url }})
+
+### Analytical Lower Bound for Probability of m-out-of-n events
+
+Many reliability and stochastic problems reduce to estimating $$P(\mu \ge m),$$ where $\mu$ denotes the **number of events that occur** among $n$ possible ones. Exact computation is rarely tractable since the number of event intersections grows exponentially with $n$. This motivates analytical **lower bounds** that can be computed from partial probabilistic information.
+
+Building on work by Prékopa, Gao, and others, we extend known bounds for $m=1$ to $m=2$ and $m=3$ using **probabilistic inequalities** and **linear programming (LP) formulations**. Our analysis incorporates **disaggregated partial information**—probabilities of specific events and their intersections—yielding tighter bounds than classical aggregated approaches.
+
+For $m=2$, we show that bounds derived from **Cauchy–Schwarz inequalities** and **LP formulations** coincide. For $m=3$, we construct a new **LP-based analytical bound** that systematically improves existing results. These formulations provide a unified, computationally efficient way to obtain **explicit analytical bounds** for general *m*-out-of-*n* probability problems. 
+
+Nie, S., & Yang, J. (2023). *Analytical lower bounds for m-out-of-n probabilities.* University of Oxford, MMath Thesis, Mathematics and Statistics, Trinity Term 2023.
+[pdf]({{ "/files/Analytical_Lower_Bounds_for_Union_Probability_Songlan_Nie.pdf" | relative_url }})
 
 ### Finite Volume Method for Gradient Flow Problems: Simulating Crystal Growth
 
-This research focused on developing a stable computational scheme for physical systems that naturally lose energy over time (a gradient flow structure).
+The growth of crystalline surfaces, such as CuO₂, can be modeled as an **energy minimization problem**. While the physics is well-understood, numerical simulation is challenging due to **stiff dynamics** and the need to preserve **energy dissipation**.
 
-* **Problem:** Simulating the **coarsening behavior** of a $\text{CuO}_2$ crystal growth model, ensuring the simulation respects the underlying physics (conservation of mass and dissipation of free energy).
-* **Method:** I simplified the model to a one-dimensional PDE and developed an **implicit-explicit (IMEX) convex-splitting numerical scheme**.
-* **Impact:** The simulations, implemented and visualized using **Julia**, correctly matched the expected coarsening behavior of crystal growth.
+We implemented a **semi-implicit 1D scheme** with **convex splitting of the potential**, which preserves two key properties at the discrete level:
+
+- **Mass conservation** – the total mass of the crystal remains constant.
+- **Energy dissipation** – the discrete free energy decreases over time.
+
+Simulations show the **coarsening of the surface**, producing piecewise linear facets with sharp transitions. This approach provides an **efficient, unconditionally energy-stable scheme** suitable for stiff gradient-flow problems in materials science.
+
+Nie, S., & Bailo, R. (2023). *Finite volume methods for gradient-flow crystal growth problems.* Oxford Mathematical Institute. [pdf]({{ "/files/Finite_volume_methods_for_gradient_flow_crystal_growth_problems.pdf" | relative_url }})
 
 ### Optimization of SVD for Image Compression
 
