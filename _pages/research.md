@@ -12,7 +12,7 @@ My research focuses on developing and implementing robust **numerical algorithms
 
 ### Integral Equation Methods for Time-Dependent Problems
 
-This is the primary focus of my Ph.D. research. I am working on creating **efficient, high-order accurate solvers** for time-dependent wave propagation and diffusion problems. These methods are crucial for rapidly and accurately simulating physics in complex domains, with applications in areas like geophysics and materials science. I presented a poster on this topic at the Rice RTG Annual Workshop in October 2025.
+This is the primary focus of my Ph.D. research. I am working on creating **fast, high-order accurate integral equation solvers** for time-dependent PDEs. These methods are crucial for rapidly and accurately simulating physics in complex domains, with applications in areas like geophysics and materials science. I presented a poster on this topic at the Rice RTG Annual Workshop in October 2025.
 
 ---
 
@@ -41,9 +41,11 @@ To address this, I explored **globalization strategies** that preserve Newton’
 - **Backtracking line search**, which adaptively scales each update to ensure a decrease in the residual norm.  
 - **Load continuation**, which introduces the nonlinearity gradually by solving a sequence of easier problems leading to the full system.
 
-I implemented and compared these strategies in a **finite element setting** using the **Firedrake** framework. The results show that with proper globalization, Newton’s method becomes a **reliable general-purpose solver** for nonlinear PDEs — maintaining fast convergence without relying on a perfect starting point.
+I implemented and compared these strategies in a **finite element setting** using the **Firedrake** framework. The results show that with proper globalization, Newton’s method becomes a **reliable general-purpose solver** for nonlinear PDEs, maintaining fast convergence without relying on a perfect starting point.
 
-Nie, S., Aznaran, F. R. A., & Parker, C. (2023). *Nonlinear elasticity and Newton’s method in infinite dimensions.* Oxford Mathematical Institute. [pdf]({{ "/files/Newton_s_method_for_nonlinear_PDEs_report.pdf" | relative_url }})
+I also presented related work on *Newton’s method in infinite dimensions and Galerkin approximations* ([slides]({{ "/files/Newton_s_method_in_infinite_dimensions_and_Galerkin_approximations.pdf" | relative_url }})), introducing Newton's method for solving nonlinear PDEs from a functional-analytic perspective.
+
+Nie, S., Aznaran, F. R. A., & Parker, C. (2023). *Nonlinear elasticity and Newton’s method in infinite dimensions.* Oxford Mathematical Institute. [PDF]({{ "/files/Newton_s_method_for_nonlinear_PDEs_report.pdf" | relative_url }})
 
 ### Analytical Lower Bound for Probability of m-out-of-n events
 
@@ -54,7 +56,7 @@ Building on work by Prékopa, Gao, and others, we extend known bounds for $m=1$ 
 For $m=2$, we show that bounds derived from **Cauchy–Schwarz inequalities** and **LP formulations** coincide. For $m=3$, we construct a new **LP-based analytical bound** that systematically improves existing results. These formulations provide a unified, computationally efficient way to obtain **explicit analytical bounds** for general *m*-out-of-*n* probability problems. 
 
 Nie, S., & Yang, J. (2023). *Analytical lower bounds for m-out-of-n probabilities.* University of Oxford, MMath Thesis, Mathematics and Statistics, Trinity Term 2023.
-[pdf]({{ "/files/Analytical_Lower_Bounds_for_Union_Probability_Songlan_Nie.pdf" | relative_url }})
+[PDF]({{ "/files/Analytical_Lower_Bounds_for_Union_Probability_Songlan_Nie.pdf" | relative_url }})
 
 ### Finite Volume Method for Gradient Flow Problems: Simulating Crystal Growth
 
@@ -67,12 +69,18 @@ We implemented a **semi-implicit 1D scheme** with **convex splitting of the pote
 
 Simulations show the **coarsening of the surface**, producing piecewise linear facets with sharp transitions. This approach provides an **efficient, unconditionally energy-stable scheme** suitable for stiff gradient-flow problems in materials science.
 
-Nie, S., & Bailo, R. (2023). *Finite volume methods for gradient-flow crystal growth problems.* Oxford Mathematical Institute. [pdf]({{ "/files/Finite_volume_methods_for_gradient_flow_crystal_growth_problems.pdf" | relative_url }})
+Nie, S., & Bailo, R. (2023). *Finite volume methods for gradient-flow crystal growth problems.* Oxford Mathematical Institute. [PDF]({{ "/files/Finite_volume_methods_for_gradient_flow_crystal_growth_problems.pdf" | relative_url }})
 
-### Optimization of SVD for Image Compression
+### Image Compression using Singular Value Decomposition (SVD)
 
-This project focused on the practical application and efficiency of a core linear algebra tool, **Singular Value Decomposition (SVD)**.
+As a short MATLAB exercise, this project illustrates how **Singular Value Decomposition (SVD)** can be used for basic image compression. Viewing an image as a matrix, SVD allows simple **low-rank approximations** that capture the main visual structure while reducing data size.
 
-* **Problem:** Efficiently generating a sequence of low-rank approximations from an image matrix using SVD to produce compressed images.
-* **Method:** I **optimized the code** used in MATLAB.
-* **Impact:** This optimization reduced the runtime for generating compressed images from **one minute to five seconds**.
+The code:
+- Converts images to grayscale and applies SVD.
+- Reconstructs the image using different ranks to compare compression quality.
+- Improves runtime from about one minute to a few seconds.
+
+The project also includes a brief look at how the **singular values decay** and how this affects image reconstruction. 
+
+Code and short report: [GitHub](https://github.com/SonglanNie/SVD_Image_Compression) · [PDF]({{ "/files/Image_Compression_Project.pdf" | relative_url }})
+
