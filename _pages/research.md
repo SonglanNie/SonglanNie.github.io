@@ -12,7 +12,7 @@ My research focuses on developing and implementing robust **numerical algorithms
 
 ### Integral Equation Methods for Time-Dependent Problems
 
-This is the primary focus of my Ph.D. research. I am working on creating **fast, high-order accurate integral equation solvers** for time-dependent PDEs. These methods are crucial for rapidly and accurately simulating physics in complex domains, with applications in areas like geophysics and materials science. I presented a poster on this topic at the Rice RTG Annual Workshop in October 2025.
+This is the primary focus of my Ph.D. research. I am working on creating **fast, high-order accurate integral equation solvers** for time-dependent PDEs. These methods are crucial for rapidly and accurately simulating physics in complex domains, with applications in areas like geophysics and materials science. 
 
 ---
 

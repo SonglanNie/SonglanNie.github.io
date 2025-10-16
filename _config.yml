@@ -304,7 +304,7 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
-  - jekyll-sitemap
+  # - jekyll-sitemap
   - jekyll-redirect-from
   - jemoji
 
@@ -313,7 +313,7 @@ whitelist:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
-  - jekyll-sitemap
+  # - jekyll-sitemap
   - jekyll-redirect-from
   - jemoji
 
@@ -351,3 +351,41 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+gallery:
+  - url: /images/photography/1.jpeg
+    image_path: /images/photography/1.jpeg
+    alt: "heron eats fish."
+  - url: /images/photography/2.jpeg
+    image_path: /images/photography/2.jpeg
+    alt: "common blackbird."
+  - url: /images/photography/4.jpeg
+    image_path: /images/photography/4.jpeg
+    alt: "robin on branch."
+  - url: /images/photography/5.jpeg
+    image_path: /images/photography/5.jpeg
+    alt: "robin with hair."
+  - url: /images/photography/6.jpeg
+    image_path: /images/photography/6.jpeg
+    alt: "robin sleeping."
+  - url: /images/photography/7.jpeg
+    image_path: /images/photography/7.jpeg
+    alt: "yellow kitten."
+  - url: /images/photography/8.jpeg
+    image_path: /images/photography/8.jpeg
+    alt: "red kite on branch."
+  - url: /images/photography/3.jpeg
+    image_path: /images/photography/3.jpeg
+    alt: "red kite in flight."
+  - url: /images/photography/11.jpeg
+    image_path: /images/photography/11.jpeg
+    alt: "egret fishing."
+  - url: /images/photography/9.jpg
+    image_path: /images/photography/9.jpg
+    alt: "two jackdaws."
+  - url: /images/photography/10.jpg
+    image_path: /images/photography/10.jpg
+    alt: "sparrow on handlebar."
+  - url: /images/photography/12.jpeg
+    image_path: /images/photography/12.jpeg
+    alt: "blackbird close-up."
