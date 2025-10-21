@@ -16,4 +16,4 @@ I enjoy turning mathematical algorithms into efficient, reliable software soluti
 * **Ph.D. in Computational Applied Mathematics**, Rice University, USA (Aug. 2023 - Present)
 * **MMath. in Mathematics and Statistics**, University of Oxford, UK (Oct. 2019 - Jun. 2023)
 
-This website serves as a portfolio of my work. Please feel free to explore my **[research](/research/)**, **[photography](/photography/)** and my **[resume](/files/Resume_Songlan_Nie.pdf)**. For inquiries, the best way to reach me is by email at `Nick.Nie@rice.edu`.
+This website serves as a portfolio of my work. Please feel free to explore my **[research](/research/)**, **[photography](/photography/)** and my **[resume](/files/Resume_Songlan_Nie.pdf)**. For inquiries, the best way to reach me is by email at <Nick.Nie@rice.edu>.
