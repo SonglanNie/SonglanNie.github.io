@@ -12,7 +12,7 @@ My research focuses on developing and implementing robust **numerical algorithms
 
 ### Integral Equation Methods for Time-Dependent Problems
 
-This is the primary focus of my Ph.D. research. I am working on creating **fast, high-order accurate integral equation solvers** for time-dependent PDEs. These methods are crucial for rapidly and accurately simulating physics in complex domains, with applications in areas like geophysics and materials science. 
+This is the primary focus of my Ph.D. research. I am working on creating **fast, high-order accurate integral equation solvers** for time-dependent PDEs. These methods are crucial for rapidly and accurately simulating physics in complex domains, with applications in areas like physics and materials science. 
 
 ---
 
@@ -49,7 +49,7 @@ Nie, S., Aznaran, F. R. A., & Parker, C. (2023). *Nonlinear elasticity and Newto
 
 ### Analytical Lower Bound for Probability of m-out-of-n events
 
-Many reliability and stochastic problems reduce to estimating $$P(\mu \ge m),$$ where $\mu$ denotes the **number of events that occur** among $n$ possible ones. Exact computation is rarely tractable since the number of event intersections grows exponentially with $n$. This motivates analytical **lower bounds** that can be computed from partial probabilistic information.
+Many reliability and stochastic problems reduce to estimating $$P(\mu \ge m),$$ where $\mu$ denotes the **number of events that occur** among $n$ possible ones. Exact computation is rarely tractable since the number of event intersections grows exponentially with $n$. This motivates **analytical lower bounds** that can be computed from partial probabilistic information.
 
 Building on work by Prékopa, Gao, and others, we extend known bounds for $m=1$ to $m=2$ and $m=3$ using **probabilistic inequalities** and **linear programming (LP) formulations**. Our analysis incorporates **disaggregated partial information**—probabilities of specific events and their intersections—yielding tighter bounds than classical aggregated approaches.
 
